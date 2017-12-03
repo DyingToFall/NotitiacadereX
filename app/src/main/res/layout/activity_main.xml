@@ -1,19 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dyingtofall.notitiacaderex.MainActivity">
+    android:background="@color/colorGreenishBlue">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/appheadertextview"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Movement Measurements Testing System"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"
+        android:layout_width="400sp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="25sp"
+        android:layout_marginLeft="25sp"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="25sp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        />
+
+    <TextView
+        android:id="@+id/testnumbertextview"
+        android:layout_gravity="left"
+        android:textSize="18sp"
+        android:text="Test 0000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/appheadertextview"
+        android:layout_marginTop="60sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/timertextview"
+        android:textSize="18sp"
+        android:text="Time (ms): 00000000000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/appheadertextview"
+        android:layout_marginTop="60sp"
+        android:layout_marginLeft="130sp"
+        app:layout_constraintLeft_toRightOf="@id/testnumbertextview"
+        android:layout_marginRight="25sp"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/accelerometertextview"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Accelerometer:"
+        android:textColor="@color/colorBlack"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/timertextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="25sp"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/accelxtextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="X: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/accelerometertextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/accelytextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Y: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/accelerometertextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/accelxtextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/accelztextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Z: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/accelerometertextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/accelytextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/gyroscopetextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Gyroscope:"
+        android:textColor="@color/colorBlack"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/accelxtextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/gyroxtextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="X: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/gyroscopetextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/gyroytextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Y: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/gyroscopetextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/gyroxtextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/gyroztextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Z: 000"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/gyroscopetextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/gyroytextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/precisiontextview"
+        android:textSize="18sp"
+        android:text="Time Interval (ms):"
+        android:textColor="@color/colorBlack"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/gyroxtextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginRight="25sp"
+        />
+
+    <EditText
+        android:id="@+id/precisionedittext"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="25"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/gyroxtextview"
+        android:layout_marginTop="38sp"
+        app:layout_constraintLeft_toRightOf="@id/precisiontextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <TextView
+        android:id="@+id/timeintervaltextview"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="Accelerometer Precision (2, 4, 8 or 16 ONLY): "
+        android:textColor="@color/colorBlack"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/precisiontextview"
+        android:layout_marginTop="50sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:layout_marginRight="25sp"
+        />
+
+    <EditText
+        android:id="@+id/timeintervaledittext"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:text="16"
+        android:textColor="@color/colorBlack"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/precisiontextview"
+        android:layout_marginTop="50sp"
+        app:layout_constraintLeft_toRightOf="@id/timeintervaltextview"
+        android:layout_marginRight="25sp"
+        />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="100sp"
+        android:layout_height="40sp"
+        android:text="Start"
+        android:textColor="@color/colorBlack"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/timeintervaltextview"
+        android:layout_marginTop="60sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="100sp"
+        android:layout_height="40sp"
+        android:text="Stop"
+        android:textColor="@color/colorBlack"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/timeintervaltextview"
+        android:layout_marginTop="60sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/startButton"
+        android:layout_marginRight="25sp"
+        />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="100sp"
+        android:layout_height="40sp"
+        android:text="Send"
+        android:textColor="@color/colorBlack"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        app:layout_constraintTop_toTopOf="@id/timeintervaltextview"
+        android:layout_marginTop="60sp"
+        android:layout_marginLeft="25sp"
+        app:layout_constraintLeft_toRightOf="@id/stopButton"
+        android:layout_marginRight="25sp"
+        />
 
 </android.support.constraint.ConstraintLayout>
+
